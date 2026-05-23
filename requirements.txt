@@ -1,0 +1,27 @@
+# ====================================================================
+# Unified dependencies for the CDAT monorepo.
+#
+# The two sub-projects use different DL stacks. Install everything via
+# `pip install -r requirements.txt`, or pick only the lines you need.
+# ====================================================================
+
+# ---- Common scientific stack ----
+numpy>=1.19.0
+scipy>=1.7.0
+scikit-learn>=0.24.0
+sympy>=1.7.0
+matplotlib==3.8.0
+einops==0.6.1
+tqdm
+
+# ---- CDAT for Graph Anomaly Detection (PyTorch + DGL) ----
+torch>=1.9.0
+dgl>=0.8.1
+
+# ---- CDAT for Graph Classification (JAX + Flax + PyG) ----
+chex==0.1.82
+jax==0.4.7
+flax==0.7.4
+optax==0.1.7
+tensorboard==2.14.0
+torch_geometric
