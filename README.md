@@ -11,6 +11,10 @@ The project is organized as a monorepo with two sub-projects, each targeting a d
 
 ## Overview
 
+<p align="center">
+  <img src="figures/CDAT.png" alt="CDAT architecture" width="85%">
+</p>
+
 CDAT introduces controlled dynamics and attractor mechanisms into the graph Transformer family. Rather than computing attention in a single forward pass, CDAT iteratively refines node representations via a controlled dynamical system whose suppression term drives the trajectory toward an energy minimum. This yields two concrete benefits:
 
 - **Stability and convergence**: The energy formulation guarantees a fixed-point attractor, making deep iterative blocks robust to noise and over-smoothing.
@@ -153,17 +157,7 @@ CDAT shares the same core ideas across both sub-projects:
 4. **Low-rank Approximation** — Efficient long-range interaction via low-rank attractor matrices.
 5. **Output Head** — Task-specific MLP (anomaly classification or graph/image classification).
 
-### Key Hyperparameters
 
-| Argument | Meaning | Typical Range |
-| --- | --- | --- |
-| `hid_dim` / `embed_dim` | Hidden / embedding dimension | 64 – 256 |
-| `n_layers` / `block` | Number of transformer blocks | 2 – 4 |
-| `depth` | Iterations of controlled dynamics per block (classification) | 2 – 12 |
-| `num_heads` / `nheads` | Number of attention heads | 2 – 12 |
-| `alpha` | Step size of the dynamics iteration | 0.01 – 0.1 |
-| `suppression_coef` | Strength of the suppression term | 0.5 – 1.0 |
-| `noise_std` | Std-dev of injected noise (0 disables noise) | 0.0 – 0.02 |
 
 ## License
 
