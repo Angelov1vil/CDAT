@@ -169,7 +169,6 @@ stats/
 *.npy
 *.npz
 *.tfevents*
-figures/
 
 # Reproducibility helpers (not committed)
 environment.yml
